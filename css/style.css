@@ -1,0 +1,650 @@
+/*  =============================================
+1.0 WEB FONTS
+============================================= */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+/*  ================================================
+:: 2.0 GLOBAL Variable Define CSS
+================================================ */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ :root {
+    /* Background Color */
+    --bg-white: #fff;
+    --bg-black: #2C2C2C;
+    --bg-light-pink: #ff007a;
+    --bg-light-gray: #f6f9fe;
+    --bg-gradient: linear-gradient(to top, #ff007a 0%, rgba(142, 0, 116, 1) 100%);
+    --bg-card-shodow: 0 0.188rem 1.25rem 0px rgba(0, 0, 0, 0.06);
+    --bg-card-shodow: 0 2rem 5rem rgb(0, 0, 0, 0.06);
+    --bg-light-gray-1: #eee;
+    /* Text Color */
+    --primary-font: "Poppins", sans-serif;
+    ;
+    --text-white: #fff;
+    --text-black: #2C2C2C;
+    --text-light-black: #444;
+    --text-light-pink: #ff007a;
+    --text-light-gray: #7e8085;
+    /* swiper  */
+    --swiper-theme-color: #ff007a;
+}
+
+
+/*  ================================================
+:: 3.0 COMMON CSS
+================================================ */
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 70px;
+}
+
+body {
+    position: relative;
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    line-height: 1.75rem;
+    background: var(--bg-white);
+    color: var(--text-black);
+    overflow-x: hidden;
+    transition: all 0.3s;
+    scroll-padding-top: 30rem;
+}
+
+h1 {
+    font-size: 6.5rem;
+    font-weight: 900;
+    color: var(--text-white);
+    line-height: 1.2;
+    display: inline-block;
+}
+
+p {
+    font-size: 1.62rem;
+    color: var(--text-light-black);
+    line-height: 1.5;
+}
+a,
+a:hover {
+    text-decoration: none;
+    color: var(--text-white);
+    display: inline-block;
+}
+
+.main-btn {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: var(--text-white);
+    background: var(--bg-gradient);
+    border: none;
+    outline: none;
+    padding: 1.6rem 2.5rem;
+    border-radius: 0.5rem;
+    transition: 1s linear;
+    cursor: pointer;
+}
+
+.main-btn:hover {
+    background: linear-gradient(to bottom, #ff007a 50%, rgba(142, 0, 116, 1) 100%);
+    transition: 1s linear;
+    color: var(--text-white);
+}
+
+.margin-bottom {
+    margin-bottom: 8rem;
+}
+
+.main-heading {
+    color: var(--text-black);
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -0.5rem;
+    width: 8%;
+    height: 2px;
+    background: var(--bg-light-pink);
+}
+
+.sub-heading {
+    color: var(--text-black);
+    max-width: 45rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+/* .padding-top{
+    padding-top: 65px;
+} */
+
+/* =======================================
+                   header
+   ======================================= */
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 2.5rem 0;
+    z-index: 9999;
+    transition: all 0.5s;
+    background: transparent;
+}
+
+
+/* sticky nav  */
+
+.active-nav {
+    background-color: var(--bg-white);
+    padding: 1.8rem 0;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+    animation: activeNav 1s;
+}
+
+@keyframes activeNav {
+    from {
+        transform: translateY(-20rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.active-nav .nav-link {
+    color: var(--text-light-black) !important;
+}
+
+.active-nav .nav-link:hover {
+    color: var(--text-light-pink) !important;
+}
+
+.active-nav .navbar-toggler-icon {
+    color: var(--text-black);
+}
+
+/* sticky nav end */
+
+.navbar .navbar-brand {
+    max-width: 18rem;
+}
+
+.navbar .navbar-brand img {
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    color: var(--text-white);
+    margin:auto 2rem;
+    letter-spacing: 1px;
+}
+.navbar-nav .active{
+    font-weight: 900;
+}
+.navbar-toggler-icon {
+    font-size: 2.5rem;
+    color: var(--text-white);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+/* =======================================
+               home section
+   ======================================= */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bg.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 9.5rem;
+}
+
+.home .home-img {
+    transform: rotate(15deg);
+}
+
+.home .home-img img {
+    max-width: 33rem;
+    display: block;
+    margin-left: auto;
+    animation: animate 2s alternate-reverse infinite;
+}
+
+/* animation  */
+
+@keyframes animate {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3rem);
+    }
+}
+
+
+/* =======================================
+            counter effect section
+   ======================================= */
+
+.counter-effect .number-box {
+    padding: 1rem 8rem;
+    position: relative;
+    width: 33rem;
+}
+
+.counter-effect .number-box::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: var(--text-light-gray);
+}
+
+.counter-effect .number-box:last-child:after {
+    background-color: transparent;
+}
+
+.counter-effect .number-box h1,
+.counter-effect .number-box span {
+    color: var(--text-light-pink);
+    font-size: 5rem;
+    display: inline-block;
+    font-weight: 700;
+}
+
+.counter-effect .number-box h3 {
+    color: var(--text-light-pink);
+}
+
+
+/* =======================================
+                card section 
+======================================== */
+
+.card-sec h1 {
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--text-black);
+}
+
+.card-sec h3 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin: 1rem auto 3rem;
+    position: relative;
+}
+
+.card-sec h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -2.5rem;
+    width: 7%;
+    height: 2px;
+    background: var(--bg-light-pink);
+}
+.fa-paint-brush{
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3rem;
+    color: #eee;
+}
+
+/* cards body  */
+
+.inner-card {
+    background-color: var(--bg-white);
+    padding: 3.5rem 2rem;
+    border-radius: 3rem;
+    text-align: center;
+    box-shadow: 0 .5rem 1rem rgba(75, 72, 72, 0.25);
+    max-width: 34rem;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.inner-card::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: -1px;
+    width: 0%;
+    height: 2.5px;
+    border-radius: 100%;
+    background: var(--bg-light-pink);
+    transition: all 0.3s linear;
+}
+
+.inner-card:hover:before {
+    width: 100%;
+}
+
+.inner-card:hover {
+    box-shadow: 0 .7rem 3rem rgba(75, 72, 72, 0.4);
+}
+
+.inner-card h2 {
+    font-size: 2.3rem;
+    color: var(--text-light-pink);
+}
+
+
+/* =======================================
+                feature section 
+======================================== */
+
+.feature-sec {
+    width: 100%;
+    height: 100vh;
+    background: url('../images/feature-bg.png') no-repeat;
+    padding: 5rem;
+}
+
+.feature-sec .feature-content {
+    flex-basis: 50%;
+}
+
+.feature-sec img {
+    width: 50%;
+    display: block;
+    margin:auto;
+}
+
+.feature-sec .feature-content h1 {
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+
+/* feature-box */
+
+.feature-box-sec {
+    margin-top: -25rem;
+}
+
+.feature-box {
+    background-color: var(--bg-white);
+    padding: 4rem 3rem;
+    color: var(--text-black);
+    border-radius: 3rem;
+    position: relative;
+    max-width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(75, 72, 72, 0.25);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.feature-box:hover {
+    background: var(--bg-gradient);
+    color: var(--text-white);
+}
+
+.feature-box:hover p {
+    color: var(--text-white);
+}
+
+.feature-box .icon-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--bg-gradient);
+    color: var(--text-white);
+    padding: 2rem;
+    font-size: 2rem;
+    border-radius: 0 0 0 2rem;
+}
+
+.feature-box h3 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.feature-box p {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: var(--text-black);
+}
+
+
+/* =======================================
+            swiper section 
+   ======================================= */
+
+.screenshot .title {
+    text-align: center;
+}
+
+.screenshot .title p {
+    font-size: 1.8rem;
+    margin: 1rem auto;
+    color: var(--text-black);
+    width: 50rem;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 280px;
+    height: 500px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* =======================================
+            package section
+   ======================================= */
+
+.pricing-box {
+    background: var(--bg-white);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: column;
+    box-shadow: 0 0.5rem 1rem rgb(75 72 72 / 25%);
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.pricing-box .label {
+    position: absolute;
+    top: 5%;
+    right: -10%;
+    padding: 1.2rem 3rem;
+    color: var(--text-white);
+    background: var(--bg-gradient);
+    font-size: 2rem;
+    font-weight: 400;
+    transform: rotate(90deg);
+}
+
+.pricing-box .label::after {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 15%;
+    right: -10%;
+    background: var(--bg-light-pink);
+    transform: rotate(45deg);
+}
+
+.pricing-box:nth-child(3) {
+    background: var(--bg-gradient);
+    background-color: #ff007a;
+}
+
+.pricing-box:hover {
+    transform: translateY(-18px);
+}
+
+.pricing-box h3 {
+    font-size: 2rem;
+    color: var(--bg-light-pink);
+    font-weight: 700;
+}
+
+.pricing-box h1 {
+    color: var(--text-black);
+    font-size: 4rem;
+}
+
+.pricing-box .icon-circle {
+    border-right: 5px dashed var(--bg-light-pink);
+    border-bottom: 5px solid var(--bg-light-pink);
+    border-radius: 50%;
+    margin: 3rem auto;
+}
+
+.pricing-box .icon-circle i {
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 50%;
+    border-bottom: 3px solid var(--bg-light-pink);
+    background: var(--bg-light-pink);
+    color: var(--bg-white);
+    margin: 6px 3px 4px 5px;
+}
+
+
+/* =======================================
+            contact us
+   ======================================= */
+
+.contact {
+    background: var(--bg-light-gray);
+    padding: 5rem 0;
+}
+
+.contact .contact-title h3 {
+    font-size: 2.5rem;
+    color: var(--text-light-pink);
+}
+
+.contact .contact-title h1 {
+    font-size: 5rem;
+    color: var(--bg-black);
+    font-weight: 900;
+}
+
+.contact .info a {
+    color: var(--bg-black);
+    font-size: 2rem;
+    display: block;
+    line-height: 3;
+    transition: all 0.3s;
+}
+
+.contact .info a:hover {
+    color: var(--bg-light-pink);
+}
+
+
+/* form  */
+
+form .form-control {
+    box-shadow: 0 0.5rem 1rem rgb(75 72 72 / 25%);
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+}
+
+form .form-control:focus {
+    box-shadow: none;
+}
+
+.contact-icon {
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--bg-light-gray);
+    box-shadow: 0 0.5rem 1rem rgb(75 72 72 / 25%);
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light-black);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.contact .form a,
+.contact .form a:hover {
+    display: inline-block;
+    line-height: unset;
+    color: var(--text-white);
+}
+
+
+/* =======================================
+            footer
+   ======================================= */
+
+footer {
+    width: 100%;
+    height: 10rem;
+    background: var(--bg-gradient);
+}
+
+footer div div {
+    width: 100%;
+    height: 10rem;
+}
+
+/* ...............................THE END....................  */
