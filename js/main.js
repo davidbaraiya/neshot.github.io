@@ -1,11 +1,11 @@
 // preloader 
 $(window).on('load', function(){ 
     $('#status').fadeOut(); 
-    $('#preloader').delay(300).fadeOut('slow'); 
+    $('#preloader').delay(300).fadeOut(); 
     $('body').delay(300).css({'overflow':'visible'});
   })
 
-  
+
 $(document).ready(function() {
     // sticky top 
     $(window).on('scroll', function() {
@@ -54,8 +54,6 @@ $('.count').each(function () {
     });
 });
 
-
-
 // swiper js 
 var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
@@ -78,3 +76,8 @@ var swiper = new Swiper(".mySwiper", {
 
 
 // .........................THE END ........................... 
+
+
+
+
+
