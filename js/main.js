@@ -1,16 +1,23 @@
-$(document).ready(function() {
+// preloader 
+$(window).on('load', function(){ 
+    $('#status').fadeOut(); 
+    $('#preloader').delay(300).fadeOut('slow'); 
+    $('body').delay(300).css({'overflow':'visible'});
+  })
 
+  
+$(document).ready(function() {
     // sticky top 
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 30) {
             $('#navbar').addClass('active-nav');
             $('#navbar').addClass('change-logo');
-            $('#navbarNav').removeClass('myNavbar');
+            $('#navbarText').removeClass('myNavbar');
 
         } else {
             $('#navbar').removeClass('active-nav');
             $('#navbar').removeClass('change-logo');
-            $('#navbarNav').addClass('myNavbar');
+            $('#navbarText').addClass('myNavbar');
         }
         // logo change 
         if ($('.navbar').hasClass('change-logo')) {
@@ -25,6 +32,11 @@ $(document).ready(function() {
         $(this).toggleClass('fa-times');
     });
 
+    // click 'a' to close nav 
+    $('.nav-link').click(function() {
+        $('.fa-stream').removeClass('fa-times');
+        $('#navbarText').removeClass('show');
+    });
     
 
 });
@@ -41,6 +53,7 @@ $('.count').each(function () {
         }
     });
 });
+
 
 
 // swiper js 
