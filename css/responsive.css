@@ -104,6 +104,9 @@
     .feature-sec img {
         width: 90%;
     }
+    .feature-sec .feature-content h1 {
+        line-height: 1.3;
+    }
 }
 
 /* .........................THE END ...........................  */

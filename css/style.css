@@ -198,7 +198,6 @@ a:hover {
 .active-nav .navbar-toggler-icon {
     color: var(--text-black);
 }
-
 /* sticky nav end */
 
 .navbar .navbar-brand {
@@ -472,11 +471,12 @@ a:hover {
     font-size: 1.8rem;
     margin: 1rem auto;
     color: var(--text-black);
-    width: 50rem;
+    max-width: 50rem;
 }
 
 .swiper {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -502,7 +502,10 @@ a:hover {
 /* =======================================
             package section
    ======================================= */
-
+.package{
+    width: 100%;
+    height: auto;
+}
 .pricing-box {
     background: var(--bg-white);
     width: 100%;
